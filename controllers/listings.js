@@ -25,22 +25,25 @@ module.exports.createListing = async (req, res, next) => {
     // let {title, description, image, price, country, location} = req.body; var name in input
     //let listing = req.body.listing;
     //  try {
-        listingSchema.validate(req.body);
+        let url = req.file.path;
+        let filename = req.file.filename;
+        console.log(url,"..",filename);
+        //listingSchema.validate(req.body);
         //console.log(result);//checking constrains if satisfies schema
         // if(result.error){
         //     throw(new ExpressError(400, result.error));
         // }
-        if(!req.body.listing){
-            throw new ExpressError(400, "Send valid data for listing"); //400 cz client error
-        }
-        const newListing = new Listing(req.body.listing);
-        newListing.owner = req.user._id;
-        if (!newListing.image.url) {
-            newListing.image.url = "https://images.unsplash.com/photo-1530103043960-ef38714abb15?q=80...";
-        }
-        await newListing.save();
+        // if(!req.body.listing){
+        //     throw new ExpressError(400, "Send valid data for listing"); //400 cz client error
+        // }
+        // const newListing = new Listing(req.body.listing);
+        // newListing.owner = req.user._id;
+        // if (!newListing.image.url) {
+        //     newListing.image.url = "https://images.unsplash.com/photo-1530103043960-ef38714abb15?q=80...";
+        // }
+        // await newListing.save();
         req.flash("success", "New listing created!");
-        console.log(newListing);
+        //console.log(newListing);
         res.redirect("/listings");
     // } catch(err){
     //     next(err);
