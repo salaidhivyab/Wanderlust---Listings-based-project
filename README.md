@@ -20,13 +20,7 @@ It demonstrates concepts like authentication, CRUD operations, image storage, an
 - **Backend**: Node.js, Express.js  
 - **Database**: MongoDB with Mongoose  
 - **Authentication**: Passport.js, bcrypt  
-- **Other Tools**: Cloudinary (image storage), Map services (optional)  
+- **Other Tools**: Cloudinary (image storage), MVC framework
 
 ---
 
-## 🚀 Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/salaidhivyab/Wanderlust---Listings-based-project.git
-   cd Wanderlust---Listings-based-project
