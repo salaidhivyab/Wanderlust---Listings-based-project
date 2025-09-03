@@ -22,5 +22,4 @@ It demonstrates concepts like authentication, CRUD operations, image storage, an
 - **Authentication**: Passport.js, bcrypt  
 - **Other Tools**: Cloudinary (image storage), MVC framework
 
----
 
