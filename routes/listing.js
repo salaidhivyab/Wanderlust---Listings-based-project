@@ -13,7 +13,7 @@ router.route("/")
     .get(wrapAsync(listingController.index))//index route
     .post( //create route
         isLoggedIn, 
-        upload.single("listing[image][file]"),
+        upload.single("listing[image]"),
         validateListing,
         wrapAsync(listingController.createListing)
     )
@@ -25,7 +25,8 @@ router.route("/:id")
     .get(wrapAsync(listingController.showListing)) //show route, below new route cz it misinterprets as id
     .put( //update route
         isLoggedIn, 
-        isAuthorizedUser, 
+        isAuthorizedUser,
+        upload.single("listing[image]"),
         validateListing, 
         wrapAsync(listingController.updateListing)
     ) 
